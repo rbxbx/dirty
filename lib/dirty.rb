@@ -27,4 +27,5 @@ class Dirty
     # Return cucumber's error status.
     $?.exitstatus
   end
+
 end
