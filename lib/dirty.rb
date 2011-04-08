@@ -8,7 +8,9 @@ class Dirty
   end
 
   def dirty_features
-    dirty_files.map { |s| s[/(features.*\.feature)/] }
+    dirty_files.map do |s|
+      s[/(features.*\.feature)/]
+    end.compact
   end
 
   def self.run
@@ -16,6 +18,8 @@ class Dirty
   end
 
   def perform
+    return 0 if dirty_features.empty?
+
     system("cucumber #{dirty_features.join(' ')}") if dirty_features.any?
 
     # Return cucumber's error status.
