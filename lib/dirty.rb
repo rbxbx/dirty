@@ -1,4 +1,6 @@
-class Dirty
+module Dirty
+  extend self
+
   def status
     `git status --porcelain`.split("\n")
   end
@@ -9,10 +11,6 @@ class Dirty
 
   def dirty_features
     dirty_files.map { |s| s[/(features.*\.feature)/] }
-  end
-
-  def self.run
-    new.perform
   end
 
   def perform
