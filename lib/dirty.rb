@@ -15,5 +15,8 @@ module Dirty
 
   def perform
     system("cucumber #{dirty_features.join(' ')}") if dirty_features.any?
+
+    # Return cucumber's error status.
+    $?.exitstatus
   end
 end

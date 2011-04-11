@@ -2,4 +2,4 @@
 
 require 'dirty'
 
-Dirty.perform
+exit(Dirty.perform)
