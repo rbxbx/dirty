@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Robert Pitts"]
   s.email       = ["rbxbxdev@gmail.com"]
   s.homepage    = ""
-  s.summary     = %q{Run those dirty features!}
-  s.description = %q{Easily run dirty cucumber features in your current project
+  s.summary     = %q{Run those dirty tests!}
+  s.description = %q{Easily run dirty cucumber features and rspec specs in your current project
                      if you're using git}
 
   s.rubyforge_project = "dirty"
