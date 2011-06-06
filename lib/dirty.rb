@@ -34,16 +34,16 @@ module Dirty
   end
 
   def dirty_features
-    dirty_matches(/(features.*\.feature)/)
+    dirty_matches(/features.*\.feature/)
   end
 
   def dirty_specs
-    dirty_matches(/(spec.*\_spec.rb)/)
+    dirty_matches(/spec.*\_spec\.rb/)
   end
 
   def dirty_matches(regex)
     dirty_files.map do |s|
-      s[regex]
+      s[/^.. (?:.* -> )?(#{regex})$/,1]
     end.compact
   end
 
