@@ -48,7 +48,7 @@ module Dirty
   end
 
   def dirty_files
-    status.reject { |f| f[/^ D/] }
+    status.reject { |f| f[/^ ?D/] }
   end
 
   def status
