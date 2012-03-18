@@ -12,7 +12,7 @@ module Dirty
 
   def commands
     case type
-    when /feature/
+    when /feature|cucumber/
       [cucumber]
     when /spec/
       [rspec]
