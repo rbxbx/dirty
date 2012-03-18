@@ -38,7 +38,7 @@ module Dirty
   end
 
   def dirty_specs
-    dirty_matches(/spec.*\_spec\.rb/)
+    dirty_matches(/spec.*(\_spec\.rb|\.feature)/)
   end
 
   def dirty_matches(regex)
