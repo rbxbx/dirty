@@ -16,8 +16,10 @@ module Dirty
       [cucumber]
     when /spec/
       [rspec]
+    when /test/
+      [test]
     else
-      [rspec, cucumber]
+      [rspec, test, cucumber]
     end.compact
   end
 
@@ -27,6 +29,10 @@ module Dirty
 
   def rspec
     "rspec #{dirty_specs.join(' ')}" if dirty_specs.any?
+  end
+
+  def test
+    "ruby -I lib:test #{dirty_tests.join(' ')}" if dirty_tests.any?
   end
 
   def cucumber
@@ -39,6 +45,10 @@ module Dirty
 
   def dirty_specs
     dirty_matches(/spec.*(\_spec\.rb|\.feature)/)
+  end
+
+  def dirty_tests
+    dirty_matches(/test.*(\_test\.rb|\.feature)/)
   end
 
   def dirty_matches(regex)
