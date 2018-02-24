@@ -62,7 +62,7 @@ module Dirty
   end
 
   def status
-    `git status --porcelain`.split("\n")
+    `git status --porcelain --untracked=all`.split("\n")
   end
 
 end
