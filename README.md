@@ -10,7 +10,3 @@ Usage:
     $ dirty            # specs and features
     $ dirty spec       # just specs
     $ dirty feature    # just features
-
-Credits:
-
-Robert Pitts
